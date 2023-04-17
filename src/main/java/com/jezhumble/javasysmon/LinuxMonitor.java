@@ -151,7 +151,7 @@ class LinuxMonitor implements Monitor {
 
     public void killProcess(int pid) {
         try {
-            ProcessKiller.DESTROY_PROCESS.invoke(null, new Object[]{new Integer(pid)});
+            ProcessKiller.DESTROY_PROCESS.invoke(null, new Object[]{pid});
         } catch (Exception e) {
             throw new RuntimeException("Could not kill process id " + pid, e);
         }

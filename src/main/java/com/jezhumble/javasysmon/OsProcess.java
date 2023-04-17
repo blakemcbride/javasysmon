@@ -32,16 +32,16 @@ public class OsProcess {
         OsProcess topLevelProcess = new OsProcess(null);
         for (int i = 0; i < processTable.length; i++) {
             OsProcess process = new OsProcess(processTable[i]);
-            processes.put(new Integer(processTable[i].getPid()), process);
+            processes.put(processTable[i].getPid(), process);
         }
         for (int i = 0; i < processTable.length; i++) {
             int pid = processTable[i].getPid();
             int ppid = processTable[i].getParentPid();
-            OsProcess process = (OsProcess) processes.get(new Integer(pid));
-            if (ppid == pid || !processes.containsKey(new Integer(ppid))) {
+            OsProcess process = (OsProcess) processes.get(pid);
+            if (ppid == pid || !processes.containsKey(ppid)) {
                 topLevelProcess.children.add(process);
             } else {
-                ((OsProcess) processes.get(new Integer(ppid))).children.add(process);
+                ((OsProcess) processes.get(ppid)).children.add(process);
             }
         }
         return topLevelProcess;
