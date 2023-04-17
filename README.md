@@ -1,3 +1,9 @@
+This is a fork of jezhumble's javasysmon.  The original code hadn't been updated since 2014.
+I updated it for Java 17.
+
+Blake McBride
+
+
 JavaSysMon
 ==========
 
