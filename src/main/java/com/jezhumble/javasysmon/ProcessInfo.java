@@ -181,6 +181,8 @@ public class ProcessInfo {
 
     private static String stringFormat(String stringToFormat, int fieldSize, boolean rightJustify) {
         // and Java doesn't really excel at this kind of thing either
+        if (stringToFormat == null)
+            stringToFormat = "";
         if (stringToFormat.length() >= fieldSize) {
             return stringToFormat.substring(0, fieldSize);
         } else {
